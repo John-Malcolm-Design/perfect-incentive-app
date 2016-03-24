@@ -3,6 +3,7 @@ angular.module('starter.controllers', [])
 .controller('IntroCtrl', function($scope, $http) {
     $scope.title = "Log In";
     $scope.result = "not yet";
+    $scope.result = "git test";
     $scope.login = function(){
         var self = this;
         console.log("login");
