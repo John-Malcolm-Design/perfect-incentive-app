@@ -1,0 +1,14 @@
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\wp8\Bin\Debug\ApplicationIcon.png
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\wp8\Bin\Debug\Background.png
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\wp8\Bin\Debug\com.ionicframework.ionicblankapp.dll
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\wp8\Bin\Debug\com.ionicframework.ionicblankapp.pdb
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\wp8\Bin\Debug\AppManifest.xaml
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\wp8\Bin\Debug\Properties\WMAppManifest.xml
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\wp8\Bin\Debug\CordovaAppProj_Debug_AnyCPU.xap
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\wp8\obj\Debug\App.g.cs
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\wp8\obj\Debug\cordovalib\CordovaView.g.cs
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\wp8\obj\Debug\MainPage.g.cs
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\wp8\obj\Debug\com.ionicframework.ionicblankapp.g.resources
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\wp8\obj\Debug\com.ionicframework.ionicblankapp.dll
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\wp8\obj\Debug\com.ionicframework.ionicblankapp.pdb
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\wp8\obj\Debug\XapCacheFile.xml
