@@ -5,14 +5,19 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('starter', ['ionic', 'starter.controllers'])
 
-app.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/')
+app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+    $urlRouterProvider.otherwise('/')
+    
+     //Enable cross domain calls
+    $httpProvider.defaults.useXDomain = true;
+    $httpProvider.defaults.withCredentials = true;
+    delete $httpProvider.defaults.headers.common["X-Requested-With"];
 
-  $stateProvider.state('intro', {
-    url: '/',
-    templateUrl: 'views/intro.html',
-    controller: 'IntroCtrl'
-  })
+    $stateProvider.state('intro', {
+        url: '/',
+        templateUrl: 'views/intro.html',
+        controller: 'IntroCtrl'
+    })
 });
 
 app.run(function($ionicPlatform) {

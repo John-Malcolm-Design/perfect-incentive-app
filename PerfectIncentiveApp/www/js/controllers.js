@@ -17,10 +17,15 @@ angular.module('starter.controllers', [])
         $http({
             method: 'POST',
             url: 'https://perfectcard-web-test.cloudapp.net/Token',
-            data: loginData
+            data: loginData,
+            withCredentials: true,
+            headers: {
+                    'Content-Type': 'application/json; charset=utf-8'
+            }
             }).then(function successCallback(response) {
                 // this callback will be called asynchronously
                 // when the response is available
+                console.log('success');
                 $scope.result = response;
             }, function errorCallback(response) {
                 // called asynchronously if an error occurs
