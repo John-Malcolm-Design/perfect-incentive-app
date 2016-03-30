@@ -28,7 +28,7 @@ angular.module('perfect.services', [])
                 if (response.data.access_token) {
                     console.log(response.data.access_token);
                     sessionStorage.setItem(tokenKey, response.data.access_token);
-                    $state.go('main');
+                    $state.go('home');
                 }
 
             }, function errorCallback(response) {

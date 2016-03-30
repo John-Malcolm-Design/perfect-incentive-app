@@ -7,13 +7,11 @@ angular.module('perfect.controllers', [])
     };
 })
  
-.controller('MainCtrl', function($scope, $http) {
-
+.controller('HomeCtrl', function($scope, $http) {
+        $scope.baseUrl = 'https://perfectcard-web-test.cloudapp.net';
  
     $scope.callApi = function () {
-        
-        ItemsModel.callMe();
-        
+               
         var token = sessionStorage.getItem($scope.tokenKey);
         delete $http.defaults.headers.common['X-Requested-With'];
         $http({

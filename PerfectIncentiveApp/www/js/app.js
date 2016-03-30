@@ -26,7 +26,7 @@ app.constant('ENDPOINT_URI', 'https://perfectcard-web-test.cloudapp.net');
 // App configuration
 app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
     // Default URL is root
-    $urlRouterProvider.otherwise('/')
+    $urlRouterProvider.otherwise('/login')
 
     // The Perfect PaSS endpoint only accepts x-www-form-urlencoded Content-Type when posting data.
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
@@ -36,7 +36,7 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
 
     // Login page (Inital app login screen)
     $stateProvider.state('login', {
-        url: '/',
+        url: '/login',
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
     })
