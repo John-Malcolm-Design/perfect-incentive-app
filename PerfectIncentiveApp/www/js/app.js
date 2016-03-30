@@ -91,6 +91,13 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
         controller: 'MainCtrl'
     })
     
+    // Test page
+    $stateProvider.state('test', {
+        url: '/test',
+        templateUrl: 'views/test.html',
+        controller: 'TestCtrl'
+    })
+    
 });
 
 // App run function
