@@ -1,9 +1,10 @@
 angular.module('perfect.controllers', [])
  
 .controller('LoginCtrl', function($scope, $state, user) {
-    $scope.user = {};    
+    $scope.user = {};   
+    $scope.result = {}; 
     $scope.login = function(){
-        user.login($scope.user.email, $scope.user.password);
+        $scope.result = user.login($scope.user.email, $scope.user.password);
     };
 })
  

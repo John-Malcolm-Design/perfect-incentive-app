@@ -30,11 +30,12 @@ angular.module('perfect.services', [])
                     sessionStorage.setItem(tokenKey, response.data.access_token);
                     $state.go('home');
                 }
+                return response;
 
             }, function errorCallback(response) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
-                $scope.result = response;
+                return response;
             });
         }
     });
