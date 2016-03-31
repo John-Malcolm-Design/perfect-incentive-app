@@ -1,6 +1,7 @@
 angular.module('perfect.services', [])
 
     .service('user', function($http, $state, ENDPOINT_URI) {
+
         var tokenKey = 'accessToken';
 
         this.login = function(username, password) {
@@ -15,12 +16,7 @@ angular.module('perfect.services', [])
             $http({
                 method: 'POST',
                 url: ENDPOINT_URI + '/Token',
-                transformRequest: function(obj) {
-                    var str = [];
-                    for (var p in obj)
-                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-                    return str.join("&");
-                },
+                transformRequest: this.transformRequest,
                 data: loginData
             }).then(function successCallback(response) {
                 // this callback will be called asynchronously
@@ -38,4 +34,56 @@ angular.module('perfect.services', [])
                 return response;
             });
         }
+
+        this.testApi = function() {
+            $http({
+                method: 'GET',
+                url: ENDPOINT_URI + '/api/GiftCardOnAccount',
+                transformRequest: this.transformRequest,
+                headers: this.getTokenHeaders()
+            }).then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+            }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+        };
+
+        this.transformRequest = function(obj) {
+            var str = [];
+            for (var p in obj)
+                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+            return str.join("&");
+        };
+
+        this.getTokenHeaders = function() {
+            var token = sessionStorage.getItem(tokenKey);
+            var headers = {};
+            if (token) {
+                headers.Authorization = 'Bearer ' + token;
+            }
+            return headers;
+        };
+
+        this.callNonCors = function() {
+            $http({
+                method: 'GET',
+                url: ENDPOINT_URI + '/api/carddetail',
+                transformRequest: this.transformRequest,
+                headers: this.getTokenHeaders(),
+            }).then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+            }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+        }
+
+        this.logOut = function() {
+            sessionStorage.removeItem(tokenKey);
+            $state.go('login');
+        }
+
     });

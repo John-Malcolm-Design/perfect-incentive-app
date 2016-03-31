@@ -1,26 +1,32 @@
-  <ion-view title="login">
-      <ion-content>
-          <div class="top-welcome">
-              <img src="img/perfect_incentive.svg" alt="Perfect Incentive" class="logo">
-          </div>
-          <div class="login-form">
-              <h3>Log In</h3>
-              <div class="list list-inset">
-                  <label class="item item-input">
-                      <input type="text" placeholder="email" ng-model="user.email">
-                  </label>
-                  <br />
-                  <label class="item item-input">
-                      <input type="password" placeholder="password" ng-model="user.password">
-                  </label>
-              </div>
-              <!--<button class="button button-positive pull-right">
+<ion-view title="login">
+    <ion-content scroll="false">
+        <div class="top-welcome">
+            <img src="img/perfect_incentive.svg" alt="Perfect Incentive" class="logo">
+        </div>
+        <div class="diagonal"></div>
+        <div class="login-form">
+            <h3>Log In</h3>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input type="text" placeholder="email" ng-model="user.email">
+                </label>
+                <br />
+                <label class="item item-input">
+                    <input type="password" placeholder="password" ng-model="user.password">
+                </label>
+            </div>
+            <!--<button class="button button-positive pull-right">
                   Sign In
               </button>-->
-              <button class="button button-full button-positive" ng-click="login()">
+            <button class="button button-positive pull-right" ng-click="login()">
                 Log In
-              </button>  
-              <p>{{result}}</p>
-          </div>
-      </ion-content>
-  </ion-view>
+            </button>
+        </div>
+    </ion-content>
+    <ion-footer-bar>
+        <div class="bar bar-footer">
+            <button class="button button-small ">Forgot your password?</button>
+            <button class="button button-small pull-right">Sign Up</button>
+        </div>
+    </ion-footer-bar>
+</ion-view>
