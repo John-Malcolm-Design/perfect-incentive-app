@@ -34,18 +34,32 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
 
     // Route configuration
 
-    // Login page (Inital app login screen)
+    // Login (Inital app login screen)
     $stateProvider.state('login', {
         url: '/login',
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
     })
+    
+    // Intro (instructions on how to use app)
+    $stateProvider.state('intro', {
+        url: '/intro',
+        templateUrl: 'views/intro.html',
+        controller: 'IntroCtrl'
+    })
 
-    // Home page (Login/ Quick Balance Check)
+    // Home (Login/ Quick Balance Check)
     $stateProvider.state('home', {
         url: '/home',
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
+    })
+    
+    // My Cards (Card list)
+    $stateProvider.state('my-cards', {
+        url: '/my-cards',
+        templateUrl: 'views/my-cards.html',
+        controller: 'MyCardsCtrl'
     })
 
 

@@ -1,25 +1,23 @@
-<ion-view title="login">
-    <ion-content scroll="false">
+<ion-view title="Login" hide-nav-bar="true">
+    <ion-content scroll="false" class="login-content">
         <div class="top-welcome">
             <img src="img/perfect_incentive.svg" alt="Perfect Incentive" class="logo">
+            <p class="login-tagline">Incentives your employees and customers really want</p>
         </div>
         <div class="diagonal"></div>
         <div class="login-form">
             <h3>Log In</h3>
             <div class="list list-inset">
                 <label class="item item-input">
-                    <input type="text" placeholder="email" ng-model="user.email">
+                    <input type="text" placeholder="email" ng-model="user.email" class="login-input">
                 </label>
                 <br />
                 <label class="item item-input">
-                    <input type="password" placeholder="password" ng-model="user.password">
+                    <input type="password" placeholder="password" ng-model="user.password" class="login-input">
                 </label>
             </div>
-            <!--<button class="button button-positive pull-right">
-                  Sign In
-              </button>-->
             <button class="button button-positive pull-right" ng-click="login()">
-                Log In
+                Sign In
             </button>
         </div>
     </ion-content>

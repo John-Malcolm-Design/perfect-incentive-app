@@ -1,0 +1,29 @@
+<ion-view title="My Cards">
+    <ion-content class="my-cards-container">
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="getCards()">
+        </ion-refresher>
+        <img src="img/perfect_incentive_color.svg" alt="Perfect Incentive" class="logo-main">
+        <p class="tagline">Incentives your employees and
+            <br> customers really want</p>
+        <h3>My Cards</h3>
+        <div>
+            
+            <ul ng-repeat="card in cards">
+                <div class="card">
+  <div class="item item-text-wrap">
+                    <img ng-src="http://test.perfectpaas.com/{{card.SmallImageUrl}}" alt="">
+                    <span>{{card.Balance}}</span>
+                    <span>{{card.MaskedPan}}</span>
+                    <span>{{card.CardStatus}}</span>
+                    <span>{{card.Expiry}}</span>  </div>
+</div>
+        </div>
+    </ion-content>
+    <ion-footer-bar>
+        <div class="bar bar-footer">
+            <button class="button button-small ">My Cards</button>
+            <button class="button button-small ">My Money</button>
+            <button class="button button-small pull-right">Sign Out</button>
+        </div>
+    </ion-footer-bar>
+</ion-view>

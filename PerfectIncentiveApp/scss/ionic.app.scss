@@ -63,6 +63,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     border-left: 5px solid $perfect-pink;
 }
 
+
 .card, .list-inset{
     margin: 20px 0px;
     background-color: $base-background-color;
@@ -87,9 +88,9 @@ ion-view{
 
 .diagonal{
     position: relative;
-    top: -13px;
+    top: -29px;
     border-right: 600px solid $base-background-color;
-    border-top: 15px solid transparent;
+    border-top: 30px solid transparent;
     overflow: hidden;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -98,5 +99,92 @@ ion-view{
 }
 
 .login-form{
-    margin: 20px 10px;
+    margin: 10px 10px;
+}
+
+.login-tagline{
+        display: none;
+}
+
+@media screen and (orientation:landscape) {
+    
+    .diagonal{
+        display: none;
+    }
+    
+    .logo{
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 76%;  
+    }
+    
+    .login-tagline{
+        color: white;
+        margin-left: 20px;
+        display: inline-block;
+    }
+    
+    .login-content{
+        display:flex;
+    }
+    
+    .top-welcome{
+        width: 50%;
+        height: 100%;
+    }
+    
+    .login-form{
+        width: 50%;
+        margin: 20px;
+    }
+}
+
+/*
+ Intro 
+ */
+ 
+ .top-welcome-intro{
+    @extend .top-welcome;
+    height: 30%;
+}
+
+.slider {
+    height: 45%;
+    .intro-message{
+        border-left: 5px solid $perfect-pink;
+        margin: 20px;
+        padding: 5px 10px;
+        display: inline;
+        top: -50px;
+        position: relative;
+    }
+}
+.slider-slide {
+    display: flex;
+    align-items: center;
+}
+
+.button.ng-hide{
+    display:none;
+}
+
+.intro-heading{
+    margin: 40px 20px 0px 20px;
+}
+
+.intro-screens{
+    height: 30%;
+}
+
+.my-cards-container{
+    margin: 10px;
+}
+
+.logo-main{
+    margin-top: 10px;
+    width: 76%;
+}
+
+.tagline{
+    color: $perfect-pink;
 }

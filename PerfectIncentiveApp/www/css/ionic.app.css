@@ -9740,7 +9740,7 @@ ion-view {
 .pull-right {
   float: right; }
 
-.top-welcome {
+.top-welcome, .top-welcome-intro {
   display: block;
   width: 100%;
   height: 45%;
@@ -9749,9 +9749,9 @@ ion-view {
 
 .diagonal {
   position: relative;
-  top: -13px;
+  top: -29px;
   border-right: 600px solid #f8f8f8;
-  border-top: 15px solid transparent;
+  border-top: 30px solid transparent;
   overflow: hidden;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -9759,4 +9759,66 @@ ion-view {
   box-sizing: border-box; }
 
 .login-form {
-  margin: 20px 10px; }
+  margin: 10px 10px; }
+
+.login-tagline {
+  display: none; }
+
+@media screen and (orientation: landscape) {
+  .diagonal {
+    display: none; }
+  .logo {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 76%; }
+  .login-tagline {
+    color: white;
+    margin-left: 20px;
+    display: inline-block; }
+  .login-content {
+    display: flex; }
+  .top-welcome, .top-welcome-intro {
+    width: 50%;
+    height: 100%; }
+  .login-form {
+    width: 50%;
+    margin: 20px; } }
+
+/*
+ Intro 
+ */
+.top-welcome-intro {
+  height: 30%; }
+
+.slider {
+  height: 45%; }
+  .slider .intro-message {
+    border-left: 5px solid #E2185D;
+    margin: 20px;
+    padding: 5px 10px;
+    display: inline;
+    top: -50px;
+    position: relative; }
+
+.slider-slide {
+  display: flex;
+  align-items: center; }
+
+.button.ng-hide {
+  display: none; }
+
+.intro-heading {
+  margin: 40px 20px 0px 20px; }
+
+.intro-screens {
+  height: 30%; }
+
+.my-cards-container {
+  margin: 10px; }
+
+.logo-main {
+  margin-top: 10px;
+  width: 76%; }
+
+.tagline {
+  color: #E2185D; }
