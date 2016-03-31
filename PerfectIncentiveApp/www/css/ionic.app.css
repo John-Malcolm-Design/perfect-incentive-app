@@ -9822,3 +9822,10 @@ ion-view {
 
 .tagline {
   color: #E2185D; }
+
+.item.item-thumbnail-left .card-thumb {
+  width: auto;
+  height: auto; }
+
+.creditcard-selected {
+  background-color: #D9D9D9; }

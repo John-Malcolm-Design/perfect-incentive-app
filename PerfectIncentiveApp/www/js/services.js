@@ -26,7 +26,9 @@ angular.module('perfect.services', [])
                     // console.log(response.data.access_token);
                     // window.localStorage[tokenKey] = response.data.access_token;
                     sessionStorage.setItem(tokenKey, response.data.access_token);
-                    $state.go('intro');
+                    // $state.go('intro');
+                                $state.go('my-cards');
+
                 }
 
 

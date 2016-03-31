@@ -7,23 +7,23 @@
             <br> customers really want</p>
         <h3>My Cards</h3>
         <div>
-            
-            <ul ng-repeat="card in cards">
-                <div class="card">
-  <div class="item item-text-wrap">
-                    <img ng-src="http://test.perfectpaas.com/{{card.SmallImageUrl}}" alt="">
-                    <span>{{card.Balance}}</span>
-                    <span>{{card.MaskedPan}}</span>
-                    <span>{{card.CardStatus}}</span>
-                    <span>{{card.Expiry}}</span>  </div>
-</div>
+            <div class="list" ng-repeat="card in cards">
+                <a class="item item-thumbnail-left" href="#"  ng-click="toggleCard(card.CardId)" id="card{{card.CardId}}">
+                    <img class="card-thumb" ng-src="http://test.perfectpaas.com{{card.ImageUrl}}">
+                    <h2>{{card.MaskedPan}}</h2>
+                    <p>Balance: €{{card.Balance}}</p>
+                    <p>Expiry: {{card.FormattedExpiry}}</p>
+                    <p ng-if="card.CardStatus == 2">Status: Active</p>
+                    <p ng-if="card.CardStatus == 1">Status: Inactive</p>
+                </a>
+            </div>
         </div>
     </ion-content>
     <ion-footer-bar>
         <div class="bar bar-footer">
-            <button class="button button-small ">My Cards</button>
-            <button class="button button-small ">My Money</button>
-            <button class="button button-small pull-right">Sign Out</button>
+            <button class="button button-small" id="activate">Activate</button>
+            <button class="button button-small" id="suspend">Suspend</button>
+            <button class="button button-small" id="replace">Replace</button>
         </div>
     </ion-footer-bar>
 </ion-view>
