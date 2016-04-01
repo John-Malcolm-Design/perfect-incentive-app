@@ -21,7 +21,7 @@ Perfect Incentive App
 var app = angular.module('perfect', ['ionic', 'perfect.services', 'perfect.controllers'])
 
 // App Constants
-app.constant('ENDPOINT_URI', 'https://perfectcard-web-test.cloudapp.net');
+app.constant('ENDPOINT_URI', 'https://test.perfectpaas.com');
 
 // App configuration
 app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
