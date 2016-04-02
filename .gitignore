@@ -1,5 +1,5 @@
-*/.jsproj
-*/.jsproj.user
+**/.jsproj
+**/.jsproj.user
 node_modules
 .tmp
 .sass-cache
