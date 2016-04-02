@@ -119,6 +119,8 @@ The app is far from finished but is approaching MVP stage.
 - **CSS** - Transparent borders: http://stackoverflow.com/questions/17751093/how-to-make-a-transparent-border-using-css
 - **CSS** - App instructions: http://codepen.io/ionic/pen/AjgEB
 - **JS** - Loop through DOM elements: https://css-tricks.com/snippets/javascript/loop-queryselectorall-matches/
+- **JS** - Setting flags in AngularJS: http://stackoverflow.com/questions/21786492/if-statement-in-ng-click
+- **JS** - Getting ionic path: http://stackoverflow.com/questions/29967743/getting-current-location-in-ionic-project-for-android
 - **CORS**  - ASP.NET MVC 5: http://www.codeproject.com/Articles/742532/Using-Web-API-Individual-User-Account-plus-CORS-En
 - **CORS**  - ASP.NET + AngularJS: http://stackoverflow.com/questions/24461605/angularjs-and-owin-authentication-on-webapi
 - **CORS** - Bypassing preflight: http://stackoverflow.com/questions/11442632/how-can-i-post-data-as-form-data-instead-of-a-request-payload/14868725#14868725
