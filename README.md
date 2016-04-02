@@ -53,8 +53,23 @@ This is a list of the most imporant files in the application.
 - views/edit-profile.html - Edit profile view.
 - scss/ionic.app.scss - Stylesheet used for all custom styles.
 
+## Running Project
+### Visual Studio 2015 IDE
+- Make sure Ionic tools for VS 15 are installed, [see here for more info.] (https://taco.visualstudio.com/en-us/docs/tutorial-ionic/)
+- Git clone the source code onto your computer.
+- Right click dependencies in solution explorer and select restore dependencies to download both bower and npm modules.
+- On Windows the app can be debugged using Ripple for iOS & Android, and natively for Windows Phone 8.1, Windows 10 & the Windows Univeral Platform.
+
 ## Issues
--  
+Main issues encountered while working on the project. 
+
+- **CORS** 
+
+Cross-origin HTTP requests that are from the localhost (aka origin) are quite rare, besides when developing and testing. I done most of my debugging on a local server spun up to test the app using my browser, this meant that all the server requests where coming from localhost:8100. I jumped in the perfect incentive test back end (which this app in interacts with) to try and resolve the issue. The project seemed to be alreay be annotated with `[Access-Control-Allow-Origin]` to allow for requests from the localhosts. After much debugging the issue boiled down to this: Some browsers and frameworks add custom HEADERS to your HTTP requests such as `Content-Type`, `Accept-Language` and `Content-Language` these initiate a 'preflight request' with the special HTTP method type of `OPTIONS`. 
+
+`[Access-Control-Allow-Origin]` does not allow for OPTIONS requests by default so either annotate each method/class you want to expose with `[HttpOptions]` or import the `System.Web.Http.Cors` package to your project and add the following line to your web app config file `app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);` see references below for more info.
+
+- **SSL**
 
 ## Mobile Apps Development Project 
 
