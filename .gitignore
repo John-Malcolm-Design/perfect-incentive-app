@@ -1,9 +1,9 @@
-.jsproj
-.jsproj.user
+*/.jsproj
+*/.jsproj.user
 node_modules
 .tmp
 .sass-cache
-**/bower_components or sometimes it is lib/**
+**/lib
 platforms
 plugins
 *.swp
