@@ -3,6 +3,10 @@
 
 # Perfect Incentive Cross Platform App
 
+[![Node version](https://img.shields.io/npm/v/npm.svg?style=flat)](http://nodejs.org/download/)
+[![Bower version](https://img.shields.io/bower/v/bootstrap.svg?style=flat)](http://bower.io/#install-bower)
+
+
 Perfect Incentive allows SME's and corporates to incentivise their staff and customers with prepaid debit cards that they can spend anywhere.
 Tax free incentives* that can be: Occasional, Bespoke, Instant or Ongoing. 
 
@@ -60,6 +64,19 @@ This is a list of the most imporant files in the application.
 - Right click dependencies in solution explorer and select restore dependencies to download both bower and npm modules.
 - On Windows the app can be debugged using Ripple for iOS & Android, and natively for Windows Phone 8.1, Windows 10 & the Windows Univeral Platform.
 
+### CLI & Text Editor of choice
+This app can be run using the command line and any IDE or text editor that supports Javascript.
+
+- Install Node, NPM, Ionic, Cordova, Bower, Gulp and Gulp-Sass.
+- Clone repo and cd into directory that contains the package.json.
+- **Dependencies**: Run `npm install` and `bower install` to install dependencies.
+- **Running**: Run `ionic serve` to start the gulp tasks and run the app locally.
+- **Install OS**: Run `ionic platform add [OS]` to install packages for a target OS.
+- **Building**: Run `ionic build [OS]` to build for a specific OS.
+- **Emulating**: Run `ionic emulate [OS]` to emulate on that OS.
+
+See [Ionic documentation](http://ionicframework.com/docs/cli/) for more info. 
+
 ## Issues
 Main issues encountered while working on the project. 
 
@@ -70,8 +87,26 @@ Cross-origin HTTP requests that are from the localhost (aka origin) are quite ra
 `[Access-Control-Allow-Origin]` does not allow for OPTIONS requests by default so either annotate each method/class you want to expose with `[HttpOptions]` or import the `System.Web.Http.Cors` package to your project and add the following line to your web app config file `app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);` see references below for more info.
 
 - **SSL**
+The app while in development is interacting with the test enviroment and not the production one. This enviroment had a self signed SSL cert that was not trusted by most browsers. I had to do a bit of debugging to figure out this was causing lots of issues while testing the app in certain browsers. They were returning an `ERR: INSECURE RESPONSE`. 
+
+In the end the easiest solution was to move the test enviroment to a new subdomain of the production and use the parent domains SSL cert as it can cover all subdomains. 
+
+- **Responsive Design**
+As I designed the app from scratch is Photoshop I had to create a lot of custom elements and deviate from the styles provided my Ionic. This meant that I was trading off some great inbuilt style normalization that Ionic provides for different devices and screen types in order to achieve a more bespoke UX that suited both the rebrand and the users needs.
 
 ## Mobile Apps Development Project 
 
+## References
+
+## Terms
+
+PerfectIncentive is a business name of PerfectCard Limited. Registered in Ireland with Company Number 423276. Registered Office Address: Unit 1, Knightpark, Greystones, Co. Wicklow.
+
+The card is issued by PSI-Pay Ltd pursuant to license by MasterCard International Incorporated. PSI-Pay Ltd is authorised and regulated by the Financial Conduct Authority (FCA) under the Electronic Money Regulations 2011 (register reference 900011) for the issuing of electronic money.
+
+MasterCard and the MasterCard Brand Mark are registered trademarks of MasterCard International.
 
 *Tax and PRSI free up to €500.00.
+
+- [Full Terms of Use] (https://secure.perfectpaas.com/Help/TermsOfUse)
+- [Privacy Policy] (https://secure.perfectpaas.com/Help/PrivacyPolicy)
