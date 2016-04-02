@@ -59,21 +59,21 @@ This is a list of the most imporant files in the application.
 
 ## Running Project
 ### Visual Studio 2015 IDE
-- Make sure Ionic tools for VS 15 are installed, [see here for more info.] (https://taco.visualstudio.com/en-us/docs/tutorial-ionic/)
-- Git clone the source code or manually download.
-- Right click dependencies in solution explorer and select restore dependencies to download both bower and npm modules.
-- On Windows the app can be debugged using Ripple for iOS & Android, and natively on OS/emulators or external device for Windows Phone 8.1, Windows 10 & the Windows Univeral Platform.
+1. Make sure Ionic tools for VS 15 are installed, [see here for more info.] (https://taco.visualstudio.com/en-us/docs/tutorial-ionic/)
+2. Git clone the source code or manually download.
+3. Right click dependencies in solution explorer and select restore dependencies to download both bower and npm modules.
+4. On Windows the app can be debugged using Ripple for iOS & Android, and natively on OS/emulators or external device for Windows Phone 8.1, Windows 10 & the Windows Univeral Platform.
 
 ### CLI & Text Editor
 This app can be run using the command line and any IDE/text editor that supports Javascript.
 
-- Install Node, NPM, Ionic, Cordova, Bower, Gulp and Gulp-Sass.
-- Clone repo and cd into directory that contains the package.json file.
-- **Dependencies**: Run commands `npm install` and also `bower install` to install dependencies.
-- **Running**: Run `ionic serve` to start the gulp tasks and run the app on a local port.
-- **Install OS**: Run `ionic platform add [OS]` to install packages for a target OS.
-- **Building**: Run `ionic build [OS]` to build for a specific OS.
-- **Emulating**: Run `ionic emulate [OS]` to emulate on that OS.
+1. Install Node, NPM, Ionic, Cordova, Bower, Gulp and Gulp-Sass.
+2. Clone repo and cd into directory that contains the package.json file.
+3. **Dependencies**: Run commands `npm install` and also `bower install` to install dependencies.
+4. **Running**: Run `ionic serve` to start the gulp tasks and run the app on a local port.
+5. **Install OS**: Run `ionic platform add [OS]` to install packages for a target OS.
+6. **Building**: Run `ionic build [OS]` to build for a specific OS.
+7. **Emulating**: Run `ionic emulate [OS]` to emulate on that OS.
 
 See [Ionic documentation](http://ionicframework.com/docs/cli/) for more info. 
 
@@ -107,9 +107,9 @@ The app is far from finished but is approaching MVP stage.
 - Card management functionality (ACTIVATE, SUSPEND, REPLACE).
 
 #### Of the 3 minumum features required by the brief this app tries to cover:
-- Isolated Storage
-- Remote data storage (either blob storage, http transfer or users own onedrive)
-- Dynamic data retrieval and use
+1. Isolated Storage
+2. Remote data storage (either blob storage, http transfer or users own onedrive)
+3. Dynamic data retrieval and use
 
 ## References
 - **SSL** - Easy SSL : https://letsencrypt.org/getting-started/
