@@ -64,7 +64,7 @@ This is a list of the most imporant files in the application.
 - Right click dependencies in solution explorer and select restore dependencies to download both bower and npm modules.
 - On Windows the app can be debugged using Ripple for iOS & Android, and natively for Windows Phone 8.1, Windows 10 & the Windows Univeral Platform.
 
-### CLI & Text Editor of choice
+### CLI & Text Editor
 This app can be run using the command line and any IDE or text editor that supports Javascript.
 
 - Install Node, NPM, Ionic, Cordova, Bower, Gulp and Gulp-Sass.
