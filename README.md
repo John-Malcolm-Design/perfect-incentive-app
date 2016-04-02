@@ -80,18 +80,18 @@ See [Ionic documentation](http://ionicframework.com/docs/cli/) for more info.
 ## Issues
 Main issues encountered while working on the project. 
 
-- **CORS** 
+#### CORS
 
 Cross-origin HTTP requests that are from the localhost (aka origin) are quite rare, besides when developing and testing. I done most of my debugging on a local server spun up to test the app using my browser, this meant that all the server requests where coming from localhost:8100. I jumped in the perfect incentive test back end (which this app in interacts with) to try and resolve the issue. The project seemed to be alreay be annotated with `[Access-Control-Allow-Origin]` to allow for requests from the localhosts. After much debugging the issue boiled down to this: Some browsers and frameworks add custom HEADERS to your HTTP requests such as `Content-Type`, `Accept-Language` and `Content-Language` these initiate a 'preflight request' with the special HTTP method type of `OPTIONS`. 
 
 `[Access-Control-Allow-Origin]` does not allow for OPTIONS requests by default so either annotate each method/class you want to expose with `[HttpOptions]` or import the `System.Web.Http.Cors` package to your project and add the following line to your web app config file `app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);` see references below for more info.
 
-- **SSL**
+#### SSL
 The app while in development is interacting with the test enviroment and not the production one. This enviroment had a self signed SSL cert that was not trusted by most browsers. I had to do a bit of debugging to figure out this was causing lots of issues while testing the app in certain browsers. They were returning an `ERR: INSECURE RESPONSE`. 
 
 In the end the easiest solution was to move the test enviroment to a new subdomain of the production and use the parent domains SSL cert as it can cover all subdomains. 
 
-- **Responsive Design**
+#### Responsive Design
 As I designed the app from scratch is Photoshop I had to create a lot of custom elements and deviate from the styles provided my Ionic. This meant that I was trading off some great inbuilt style normalization that Ionic provides for different devices and screen types in order to achieve a more bespoke UX that suited both the rebrand and the users needs.
 
 ## Mobile Apps Development Project 
