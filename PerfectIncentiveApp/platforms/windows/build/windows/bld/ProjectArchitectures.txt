@@ -1,1 +1,0 @@
-Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\CordovaApp.Windows10.jsproj;arm
