@@ -1,6 +1,13 @@
 angular.module('perfect.controllers', [])
 
-    .controller('LoginCtrl', function($scope, $state, user) {
+    .controller('LoginCtrl', function($scope, $state, user, $ionicSideMenuDelegate) {
+        $scope.$on('$ionicView.enter', function() {
+            $ionicSideMenuDelegate.canDragContent(false);
+        });
+        $scope.$on('$ionicView.leave', function() {
+            $ionicSideMenuDelegate.canDragContent(true);
+        });
+
         $scope.user = {};
         $scope.result = {};
         $scope.login = function() {
@@ -8,7 +15,64 @@ angular.module('perfect.controllers', [])
         };
     })
 
-    .controller('HomeCtrl', function($scope, $http, user) {
+    .controller('HomeCtrl', function($scope, $http, user, $ionicSideMenuDelegate, $ionicPopover) {
+        $scope.$on('$ionicView.enter', function() {
+            $ionicSideMenuDelegate.canDragContent(false);
+        });
+        $scope.$on('$ionicView.leave', function() {
+            $ionicSideMenuDelegate.canDragContent(true);
+        });
+
+        $scope.user = {};
+        $scope.result = {};
+        $scope.login = function() {
+            user.login($scope.user.email, $scope.user.password);
+        };
+
+        $scope.hasCardDetails = false;
+        $scope.checkQBC = function($event) {
+            if ($scope.hasCardDetails == true) {
+                console.log('truuu');
+            } else {
+                $scope.openPopover($event);
+            }
+        }
+
+        // .fromTemplate() method
+        var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';
+
+        $scope.popover = $ionicPopover.fromTemplate(template, {
+            scope: $scope
+        });
+
+        // .fromTemplateUrl() method
+        $ionicPopover.fromTemplateUrl('my-popover.html', {
+            scope: $scope
+        }).then(function(popover) {
+            $scope.popover = popover;
+        });
+
+
+        $scope.openPopover = function($event) {
+            $scope.popover.show($event);
+        };
+        $scope.closePopover = function() {
+            $scope.popover.hide();
+        };
+        //Cleanup the popover when we're done with it!
+        $scope.$on('$destroy', function() {
+            $scope.popover.remove();
+        });
+        // Execute action on hide popover
+        $scope.$on('popover.hidden', function() {
+            // Execute action
+        });
+        // Execute action on remove popover
+        $scope.$on('popover.removed', function() {
+            // Execute action
+        });
+
+
         $scope.baseUrl = 'http://test.perfectpaas.com/';
 
         $scope.testApi = function() {
@@ -25,7 +89,13 @@ angular.module('perfect.controllers', [])
 
     })
 
-    .controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
+    .controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
+        $scope.$on('$ionicView.enter', function() {
+            $ionicSideMenuDelegate.canDragContent(false);
+        });
+        $scope.$on('$ionicView.leave', function() {
+            $ionicSideMenuDelegate.canDragContent(true);
+        });
 
         // Called to navigate to the main app
         $scope.startApp = function() {
@@ -45,7 +115,14 @@ angular.module('perfect.controllers', [])
 
     })
 
-    .controller('MyCardsCtrl', function($scope, user, $state, $ionicSlideBoxDelegate) {
+    .controller('MyCardsCtrl', function($ionicHistory, $scope, user, $state, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
+        $scope.$on('$ionicView.enter', function() {
+            $ionicHistory.clearHistory();
+            $ionicSideMenuDelegate.canDragContent(true);
+        });
+        $scope.$on('$ionicView.leave', function() {
+            $ionicSideMenuDelegate.canDragContent(false);
+        });
         $scope.cards;
         $scope.selectedCards = [];
 
@@ -57,6 +134,10 @@ angular.module('perfect.controllers', [])
                 // Stop the ion-refresher from spinning
                 $scope.$broadcast('scroll.refreshComplete');
             });;
+
+            $scope.logOut = function() {
+                user.logOut();
+            }
         };
 
         $scope.getCards();
@@ -103,11 +184,39 @@ angular.module('perfect.controllers', [])
             buttons.push(document.getElementById('replace'));
             return buttons;
         }
-        
+
         /*
         create flag to see if anything is in selected cards array
         flag can be bound to buttons style.
         */
+    })
 
+    .controller('SignUpCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
+        $scope.$on('$ionicView.enter', function() {
+            $ionicSideMenuDelegate.canDragContent(true);
+        });
+        $scope.$on('$ionicView.leave', function() {
+            $ionicSideMenuDelegate.canDragContent(false);
+        });
+
+    })
+
+    .controller('ForgotPasswordCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
+        $scope.$on('$ionicView.enter', function() {
+            $ionicSideMenuDelegate.canDragContent(true);
+        });
+        $scope.$on('$ionicView.leave', function() {
+            $ionicSideMenuDelegate.canDragContent(false);
+        });
+
+    })
+
+    .controller('EditProfileCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
+        $scope.$on('$ionicView.enter', function() {
+            $ionicSideMenuDelegate.canDragContent(true);
+        });
+        $scope.$on('$ionicView.leave', function() {
+            $ionicSideMenuDelegate.canDragContent(false);
+        });
 
     })

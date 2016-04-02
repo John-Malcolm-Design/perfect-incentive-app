@@ -3,12 +3,13 @@
         <ion-refresher pulling-text="Pull to refresh..." on-refresh="getCards()">
         </ion-refresher>
         <img src="img/perfect_incentive_color.svg" alt="Perfect Incentive" class="logo-main">
+        <a class="menu-toggle button button-small button-outline ion-navicon button-positive"></a>
         <p class="tagline">Incentives your employees and
             <br> customers really want</p>
         <h3>My Cards</h3>
         <div>
             <div class="list" ng-repeat="card in cards">
-                <a class="item item-thumbnail-left" href="#"  ng-click="toggleCard(card.CardId)" id="card{{card.CardId}}">
+                <a class="item item-thumbnail-left" id="card{{card.CardId}}">
                     <img class="card-thumb" ng-src="http://test.perfectpaas.com{{card.ImageUrl}}">
                     <h2>{{card.MaskedPan}}</h2>
                     <p>Balance: €{{card.Balance}}</p>

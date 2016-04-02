@@ -6,13 +6,13 @@
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
     <TargetOsDescription>Windows 10.0</TargetOsDescription>
-    <SolutionConfiguration>debug|x86</SolutionConfiguration>
-    <PackageArchitecture>x86</PackageArchitecture>
+    <SolutionConfiguration>debug|anycpu</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>fd91b6a0-f0ff-11e5-90ad-e56c62e6d450</PackageIdentityName>
     <IntermediateOutputPath>Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\build\windows\bld\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\build\windows\debug\x86\win10\AppxManifest.xml">
+    <AppXManifest Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\build\windows\debug\anycpu\win10\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
@@ -75,6 +75,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\js\platformOverrides.js">
       <PackagePath>www\js\platformOverrides.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\js\services.js">
+      <PackagePath>www\js\services.js</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\lib\angular-animate\angular-animate.js">
       <PackagePath>www\lib\angular-animate\angular-animate.js</PackagePath>
@@ -247,11 +250,26 @@
     <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\index.html">
       <PackagePath>www\index.html</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\views\edit-profile.html">
+      <PackagePath>www\views\edit-profile.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\views\forgot-password.html">
+      <PackagePath>www\views\forgot-password.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\views\home.html">
+      <PackagePath>www\views\home.html</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\views\intro.html">
       <PackagePath>www\views\intro.html</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\views\main.html">
-      <PackagePath>www\views\main.html</PackagePath>
+    <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\views\login.html">
+      <PackagePath>www\views\login.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\views\my-cards.html">
+      <PackagePath>www\views\my-cards.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\views\sign-up.html">
+      <PackagePath>www\views\sign-up.html</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\fonts\montserrat-black-webfont.eot">
       <PackagePath>www\fonts\montserrat-black-webfont.eot</PackagePath>
@@ -306,6 +324,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\img\perfect_incentive.svg">
       <PackagePath>www\img\perfect_incentive.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\img\perfect_incentive_color.svg">
+      <PackagePath>www\img\perfect_incentive_color.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\img\wallet.svg">
+      <PackagePath>www\img\wallet.svg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\lib\ionic\fonts\ionicons.svg">
       <PackagePath>www\lib\ionic\fonts\ionicons.svg</PackagePath>
@@ -387,6 +411,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\fonts\montserrat-ultralight-webfont.woff2">
       <PackagePath>www\fonts\montserrat-ultralight-webfont.woff2</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\img\.DS_Store">
+      <PackagePath>www\img\.DS_Store</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\lib\.DS_Store">
+      <PackagePath>www\lib\.DS_Store</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\www\img\jumping.jpg">
       <PackagePath>www\img\jumping.jpg</PackagePath>
@@ -595,7 +625,7 @@
     <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\config.xml">
       <PackagePath>config.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\build\windows\debug\x86\win10\resources.pri">
+    <AppxPackagedFile Include="Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\build\windows\debug\anycpu\win10\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

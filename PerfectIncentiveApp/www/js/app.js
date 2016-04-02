@@ -18,7 +18,7 @@ Perfect Incentive App
 */
 
 // Declare global app module and inject dependencies. 
-var app = angular.module('perfect', ['ionic', 'perfect.services', 'perfect.controllers'])
+var app = angular.module('perfect', ['ionic', 'perfect.services', 'perfect.controllers',])
 
 // App Constants
 app.constant('ENDPOINT_URI', 'https://test.perfectpaas.com');
@@ -34,39 +34,66 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
 
     // Route configuration
 
-    // Login (Inital app login screen)
+    // Login 
     $stateProvider.state('login', {
         url: '/login',
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
     })
-    
-    // Intro (instructions on how to use app)
+
+    // Sign Up 
+    $stateProvider.state('sign-up', {
+        url: '/sign-up',
+        templateUrl: 'views/sign-up.html',
+        controller: 'SignUpCtrl'
+    })
+
+    // Forgot Password
+    $stateProvider.state('forgot-password', {
+        url: '/forgot-password',
+        templateUrl: 'views/forgot-password.html',
+        controller: 'ForgotPasswordCtrl'
+    })
+
+    // Intro 
     $stateProvider.state('intro', {
         url: '/intro',
         templateUrl: 'views/intro.html',
         controller: 'IntroCtrl'
     })
 
-    // Home (Login/ Quick Balance Check)
+    // Home 
     $stateProvider.state('home', {
         url: '/home',
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
     })
-    
-    // My Cards (Card list)
+
+    // My Cards 
     $stateProvider.state('my-cards', {
         url: '/my-cards',
         templateUrl: 'views/my-cards.html',
         controller: 'MyCardsCtrl'
     })
 
+    // Edit Profile
+    $stateProvider.state('edit-profile', {
+        url: '/edit-profile',
+        templateUrl: 'views/edit-profile.html',
+        controller: 'EditProfileCtrl'
+    })
+
 
 });
 
 // App run function
-app.run(function($ionicPlatform) {
+app.run(function($ionicPlatform, $rootScope, user) {
+
+    $rootScope.logOut = function(path) {
+        user.logOut(path);
+    };
+
+
     $ionicPlatform.ready(function() {
         if (cordova.platformId === 'ios' && window.cordova && window.cordova.plugins.Keyboard) {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

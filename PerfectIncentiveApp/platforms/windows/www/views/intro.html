@@ -1,26 +1,25 @@
-﻿  <ion-view title="intro">
-      <ion-content>
-          <div class="top-welcome">
-              <img src="img/perfect_incentive.svg" alt="Perfect Incentive" class="logo">
-          </div>
-          <div class="login-form">
-              <h3>{{title}}</h3>
-              <div class="list list-inset">
-                  <label class="item item-input">
-                      <input type="text" placeholder="First Name">
-                  </label>
-                  <br />
-                  <label class="item item-input">
-                      <input type="password" placeholder="Password">
-                  </label>
-              </div>
-              <!--<button class="button button-positive pull-right">
-                  Sign In
-              </button>-->
-              <button class="button button-full button-positive" ng-click="login()">
-                {{title}}
-              </button>  
-              <p>{{result}}</p>
-          </div>
-      </ion-content>
-  </ion-view>
+﻿<ion-view view-title="Intro" hide-nav-bar="true">
+    <ion-content scroll="false">
+        <div class="top-welcome-intro">
+            <img src="img/perfect_incentive.svg" alt="Perfect Incentive" class="logo">
+            <p class="login-tagline">Incentives your employees and customers really want</p>
+        </div>
+        <div class="diagonal"></div>
+
+        <h4 class="intro-heading">Welcome to <br>Perfect Incentive</h4>
+        <ion-slide-box on-slide-changed="slideChanged(index)">
+            <ion-slide>
+                <p class="intro-message">Perform a Quick Balance Check with a single tap!</p>
+            </ion-slide>
+            <ion-slide>
+                <p class="intro-message">Check your transaction history and perform card operations, such as suspending, activating and merging.</p>
+            </ion-slide>
+            <ion-slide>
+                <p class="intro-message">Manage your finances and keep track of your spending in the "My Money" section.</p>
+            </ion-slide>
+            <ion-slide>
+                <p class="intro-message" ng-click="startApp()">View my Cards</p>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

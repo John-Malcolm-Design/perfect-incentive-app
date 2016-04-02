@@ -1,6 +1,6 @@
-Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\build\windows\debug\x86\win10\resources.pri
-Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\build\windows\debug\x86\win10\AppxManifest.xml
-Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\build\windows\debug\x86\win10\CordovaApp.Windows10.build.appxrecipe
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\build\windows\debug\arm\win10\resources.pri
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\build\windows\debug\arm\win10\AppxManifest.xml
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\build\windows\debug\arm\win10\CordovaApp.Windows10.build.appxrecipe
 Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\build\windows\bld\ResourceHandlingTask.state
 Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\build\windows\bld\priconfig.xml
 Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\build\windows\bld\priconfig.xml.intermediate

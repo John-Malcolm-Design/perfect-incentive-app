@@ -1,1 +1,1 @@
-Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\AppPackages\CordovaApp.Windows10_0.0.1.0_x86_debug_Test\CordovaApp.Windows10_0.0.1.0_x86_debug.appx
+Z:\Perfect Card\PerfectIncentiveApp\PerfectIncentiveApp\platforms\windows\AppPackages\CordovaApp.Windows10_0.0.1.0_arm_debug_Test\CordovaApp.Windows10_0.0.1.0_arm_debug.appx

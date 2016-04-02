@@ -8,7 +8,10 @@
     <AndroidEmulatorID>AndroidDevice;Device</AndroidEmulatorID>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Windows Phone (Universal)'">
-    <DebuggerFlavor>WindowsMobileEmulator</DebuggerFlavor>
+    <DebuggerFlavor>PhoneDevice81</DebuggerFlavor>
     <WindowsMobileEmulatorID>98CD6FA8-9114-4179-ACA3-38E5D23C77EE;Mobile Emulator 10.0.10586.0 WVGA 4 inch 512MB</WindowsMobileEmulatorID>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Windows-AnyCPU'">
+    <DebuggerFlavor>PhoneDevice81</DebuggerFlavor>
   </PropertyGroup>
 </Project>

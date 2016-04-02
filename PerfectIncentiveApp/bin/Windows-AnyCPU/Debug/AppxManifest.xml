@@ -7,10 +7,10 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="com.ionicframework.ionicblankapp" Publisher="CN=Apache Cordova Team" Version="0.0.1.0" ProcessorArchitecture="x86" />
+  <Identity Name="com.ionicframework.ionicblankapp" Publisher="CN=Apache Cordova Team" Version="0.0.1.0" ProcessorArchitecture="neutral" />
   <mp:PhoneIdentity PhoneProductId="fd91b6a0-f0ff-11e5-90ad-e56c62e6d450" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>ionic-blankapp</DisplayName>
+    <DisplayName>Perfect Incentive App</DisplayName>
     <PublisherDisplayName>Your Name Here</PublisherDisplayName>
     <Logo>images\StoreLogo.png</Logo>
   </Properties>
@@ -22,7 +22,7 @@
   </Resources>
   <Applications>
     <Application Id="com.ionicframework.ionicblankapp" StartPage="ms-appx-web://com.ionicframework.ionicblankapp/www/index.html">
-      <uap:VisualElements BackgroundColor="#464646" Description="CordovaApp" DisplayName="ionic-blankapp" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png">
+      <uap:VisualElements BackgroundColor="#464646" Description="CordovaApp" DisplayName="Perfect Incentive App" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png">
         <uap:SplashScreen Image="images\splashscreen.png" />
         <uap:DefaultTile ShortName="ionic-blankapp" Square310x310Logo="images\Square310x310Logo.png" Square71x71Logo="images\Square71x71Logo.png" Wide310x150Logo="images\Wide310x150Logo.png" />
         <uap:InitialRotationPreference>

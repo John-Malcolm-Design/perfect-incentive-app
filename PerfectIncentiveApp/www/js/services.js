@@ -26,8 +26,11 @@ angular.module('perfect.services', [])
                     // console.log(response.data.access_token);
                     // window.localStorage[tokenKey] = response.data.access_token;
                     sessionStorage.setItem(tokenKey, response.data.access_token);
-                    // $state.go('intro');
-                                $state.go('my-cards');
+                    if ($state.current.name == "login") {
+                        $state.go('intro');
+                    } else {
+                        $state.go('my-cards');
+                    }
 
                 }
 
@@ -91,7 +94,8 @@ angular.module('perfect.services', [])
 
         this.logOut = function() {
             sessionStorage.removeItem(tokenKey);
-            $state.go('login');
+            $state.go('home');
         }
+
 
     });
