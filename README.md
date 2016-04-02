@@ -112,17 +112,17 @@ The app is far from finished but is approaching MVP stage.
 - Dynamic data retrieval and use
 
 ## References
-SSL: https://letsencrypt.org/getting-started/
-CSS - Responsive Positioning: http://stackoverflow.com/questions/4804581/css-expand-child-div-height-to-parents-height
-CSS - Positioning: https://forum.ionicframework.com/t/set-height-in-percentage-of-an-element-inside-ion-content/6315
-CSS - Creating Diagonals: http://code.tutsplus.com/tutorials/how-to-create-diagonal-lines-with-css--net-20763
-CSS - Transparent borders: http://stackoverflow.com/questions/17751093/how-to-make-a-transparent-border-using-css
-CSS - App instructions: http://codepen.io/ionic/pen/AjgEB
-JS - Loop through DOM elements: https://css-tricks.com/snippets/javascript/loop-queryselectorall-matches/
-CORS - ASP.NET MVC 5: http://www.codeproject.com/Articles/742532/Using-Web-API-Individual-User-Account-plus-CORS-En
-CORS ASP.NET + AngularJS: http://stackoverflow.com/questions/24461605/angularjs-and-owin-authentication-on-webapi
-CORS - Bypassing preflight: http://stackoverflow.com/questions/11442632/how-can-i-post-data-as-form-data-instead-of-a-request-payload/14868725#14868725
-CORS - Bypassing preflight: http://victorblog.com/2012/12/20/make-angularjs-http-service-behave-like-jquery-ajax/
+- **SSL** - *Easy SSL* : https://letsencrypt.org/getting-started/
+- **CSS** - *Responsive Positioning:* http://stackoverflow.com/questions/4804581/css-expand-child-div-height-to-parents-height
+- **CSS** - *Positioning:* https://forum.ionicframework.com/t/set-height-in-percentage-of-an-element-inside-ion-content/6315
+- **CSS** - *Creating Diagonals:* http://code.tutsplus.com/tutorials/how-to-create-diagonal-lines-with-css--net-20763
+- **CSS** - *Transparent borders:* http://stackoverflow.com/questions/17751093/how-to-make-a-transparent-border-using-css
+- **CSS** - *App instructions:* http://codepen.io/ionic/pen/AjgEB
+- **JS** - *Loop through DOM elements:* https://css-tricks.com/snippets/javascript/loop-queryselectorall-matches/
+- **CORS**  - *ASP.NET MVC 5:* http://www.codeproject.com/Articles/742532/Using-Web-API-Individual-User-Account-plus-CORS-En
+- **CORS**  - *ASP.NET + AngularJS:* http://stackoverflow.com/questions/24461605/angularjs-and-owin-authentication-on-webapi
+- **CORS** - *Bypassing preflight:* http://stackoverflow.com/questions/11442632/how-can-i-post-data-as-form-data-instead-of-a-request-payload/14868725#14868725
+- **CORS** - *Bypassing preflight:* http://victorblog.com/2012/12/20/make-angularjs-http-service-behave-like-jquery-ajax/
  
 ## Terms
 
