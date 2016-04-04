@@ -1,15 +1,21 @@
+<!-- Manage cards -->
 <ion-view title="My Cards">
     <ion-content class="my-cards-container">
+        <!-- Pull to refresh content -->
         <ion-refresher pulling-text="Pull to refresh..." on-refresh="getCards()">
         </ion-refresher>
+
+        <!-- Header area -->
         <img src="img/perfect_incentive_color.svg" alt="Perfect Incentive" class="logo-main">
         <a class="menu-toggle button button-small button-outline ion-navicon button-positive"></a>
         <p class="tagline">Incentives your employees and
             <br> customers really want</p>
+
+        <!-- Cards list -->
         <h3>My Cards</h3>
         <div>
             <div class="list" ng-repeat="card in cards">
-                <a class="item item-thumbnail-left" id="card{{card.CardId}}">
+                <a class="item item-thumbnail-left" ng-click="toggleCard({{card.CardId}})" id="card{{card.CardId}}">
                     <img class="card-thumb" ng-src="http://test.perfectpaas.com{{card.ImageUrl}}">
                     <h2>{{card.MaskedPan}}</h2>
                     <p>Balance: €{{card.Balance}}</p>
@@ -20,10 +26,11 @@
             </div>
         </div>
     </ion-content>
+    <!-- Footer area -->
     <ion-footer-bar>
         <div class="bar bar-footer">
-            <button class="button button-small" id="activate">Activate</button> 
-            <button class="button button-small" id="suspend">Suspend</button> 
+            <button class="button button-small" id="activate">Activate</button>
+            <button class="button button-small" id="suspend">Suspend</button>
             <button class="button button-small" id="replace">Replace</button>
         </div>
     </ion-footer-bar>

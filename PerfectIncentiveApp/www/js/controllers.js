@@ -1,6 +1,17 @@
+/*
+    Contains controllers for the app. 
+    Needs to be refactored into seperate files as per angularJS style guide.
+*/
 angular.module('perfect.controllers', [])
 
+    // Login Controller
     .controller('LoginCtrl', function($scope, $state, user, $ionicSideMenuDelegate) {
+
+        // Variable decleration
+        $scope.user = {};
+        $scope.result = {};
+
+        // Disable sidemenu for view
         $scope.$on('$ionicView.enter', function() {
             $ionicSideMenuDelegate.canDragContent(false);
         });
@@ -8,18 +19,25 @@ angular.module('perfect.controllers', [])
             $ionicSideMenuDelegate.canDragContent(true);
         });
 
-        $scope.user = {};
-        $scope.result = {};
+        // Login function
         $scope.login = function() {
             user.login($scope.user.email, $scope.user.password);
         };
     })
 
+    // Home Controller
     .controller('HomeCtrl', function($scope, $http, user, $ionicSideMenuDelegate, $ionicPopover) {
+
+        //Variable declerations
         $scope.card = {};
         $scope.balance = {};
+        $scope.user = {};
+        $scope.result = {};
+        $scope.hasCardDetails = false;
+        $scope.showingBalance = false;
         $scope.qBC = 'Quick Balance<br/> Check';
-        
+
+        // Disable sidemenu for this view
         $scope.$on('$ionicView.enter', function() {
             $ionicSideMenuDelegate.canDragContent(false);
         });
@@ -27,33 +45,30 @@ angular.module('perfect.controllers', [])
             $ionicSideMenuDelegate.canDragContent(true);
         });
 
-        $scope.user = {};
-        $scope.result = {};
+        // Home login function 
         $scope.login = function() {
             user.login($scope.user.email, $scope.user.password);
         };
-        
-        $scope.hasCardDetails = false;
-        $scope.showingBalance = false;
-        
+
+        // Quick Balance Check tapped function
         $scope.checkQBC = function($event) {
             if (window.localStorage['hascard'] == 1) {
                 console.log('truuu');
-                if($scope.showingBalance == true){
+                if ($scope.showingBalance == true) {
                     angular.element(document.getElementById('qbc-text')).css({
-                    'font-size': '24px',
-                    'paddingBottom': '10px' 
-                });
-                    $scope.qBC = 'Quick Balance<br/> Check';  
+                        'font-size': '24px',
+                        'paddingBottom': '10px'
+                    });
+                    $scope.qBC = 'Quick Balance<br/> Check';
                     $scope.showingBalance = false;
-                } else{
+                } else {
                     $scope.balance = window.localStorage['balance'];
                     angular.element(document.getElementById('qbc-text')).css({
-                    'font-size': '44px',
-                    'paddingBottom': '0px' 
-                });
+                        'font-size': '44px',
+                        'paddingBottom': '0px'
+                    });
                     $scope.showingBalance = true;
-                        $scope.qBC = '€' + $scope.balance; 
+                    $scope.qBC = '€' + $scope.balance;
                 }
             } else {
                 $scope.openPopover($event);
@@ -62,7 +77,7 @@ angular.module('perfect.controllers', [])
 
         // .fromTemplate() method
         var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';
-
+        
         $scope.popover = $ionicPopover.fromTemplate(template, {
             scope: $scope
         });
@@ -81,6 +96,7 @@ angular.module('perfect.controllers', [])
         $scope.closePopover = function() {
             $scope.popover.hide();
         };
+        
         //Cleanup the popover when we're done with it!
         $scope.$on('$destroy', function() {
             $scope.popover.remove();
@@ -94,39 +110,47 @@ angular.module('perfect.controllers', [])
             // Execute action
         });
         
+        // Perform quick balance server poll 
         $scope.quickBalanceCheck = function() {
             
-            
+            // Hide form
             angular.element(document.getElementById('qbcList')).css({
-                    'display': 'none'
-                });
+                'display': 'none'
+            });
             
+            // Display loading spinner 
             angular.element(document.getElementById('spinny')).css({
-                    'display': 'block'
-                });
-               
+                'display': 'block'
+            });
             
-            // console.log('pan: ' + $scope.card.pan + ', ccv: ' + $scope.card.ccv);
+            // Call Quick Balance check 
             user.quickBalanceCheck($scope.card.pan, $scope.card.ccv).then(function(response) {
+                
+                // Set local storage variables
                 window.localStorage['balance'] = response.data.Balance;
                 window.localStorage['hascard'] = 1;
-                console.log($scope.card);
                 
-                            $scope.closePopover();
-                                $scope.hasCardDetails = true;
-                                $scope.showingBalance = true;
+                // Close the pop over
+                $scope.closePopover();
+                
+                // Set flags
+                $scope.hasCardDetails = true;
+                $scope.showingBalance = true;
+                
+                // Set balance
                 $scope.balance = response.data.Balance;
                 console.log(response.data.Balance);
+                
+                // Display Balance
                 $scope.qBC = '€' + $scope.balance;
                 angular.element(document.getElementById('qbc-text')).css({
                     'font-size': '44px',
-                    'paddingBottom': '0px' 
+                    'paddingBottom': '0px'
                 });
             });
         }
-
-
-
+        
+        // Endpoint testing functions
         $scope.testApi = function() {
             user.testApi();
         };
@@ -135,13 +159,17 @@ angular.module('perfect.controllers', [])
             user.getCardDetail();
         };
 
+        // Log out function
         $scope.logOut = function() {
             user.logOut();
         };
 
     })
 
+    // Intro contoller
     .controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
+        
+        // Hide sidemenu
         $scope.$on('$ionicView.enter', function() {
             $ionicSideMenuDelegate.canDragContent(false);
         });
@@ -167,7 +195,14 @@ angular.module('perfect.controllers', [])
 
     })
 
+    // My Cards controller
     .controller('MyCardsCtrl', function($ionicHistory, $scope, user, $state, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
+        
+        // Variable declerations
+        $scope.cards;
+        $scope.selectedCards = [];
+
+        // Enable sidemenu
         $scope.$on('$ionicView.enter', function() {
             $ionicHistory.clearHistory();
             $ionicSideMenuDelegate.canDragContent(true);
@@ -175,9 +210,8 @@ angular.module('perfect.controllers', [])
         $scope.$on('$ionicView.leave', function() {
             $ionicSideMenuDelegate.canDragContent(false);
         });
-        $scope.cards;
-        $scope.selectedCards = [];
-
+       
+        // Get cards function
         $scope.getCards = function() {
             user.getCardDetail().then(function(response) {
                 $scope.cards = response.data;
@@ -186,14 +220,17 @@ angular.module('perfect.controllers', [])
                 // Stop the ion-refresher from spinning
                 $scope.$broadcast('scroll.refreshComplete');
             });;
-
+            
+            // Log out function
             $scope.logOut = function() {
                 user.logOut();
             }
         };
-
+        
+        // Get cards on page load
         $scope.getCards();
-
+        
+        // Select/ Deselect cards
         $scope.toggleCard = function(id) {
             if ($scope.selectedCards.indexOf(id) == -1) {
                 console.log('pushing');
@@ -228,7 +265,8 @@ angular.module('perfect.controllers', [])
 
 
         };
-
+        
+        // Enable/ disable buttons 
         $scope.getButtons = function() {
             var buttons = [];
             buttons.push(document.getElementById('suspend'));
@@ -242,8 +280,11 @@ angular.module('perfect.controllers', [])
         flag can be bound to buttons style.
         */
     })
-
+    
+    // Sign up controller
     .controller('SignUpCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
+        
+        // Disable sidemenu
         $scope.$on('$ionicView.enter', function() {
             $ionicSideMenuDelegate.canDragContent(true);
         });
@@ -253,6 +294,7 @@ angular.module('perfect.controllers', [])
 
     })
 
+    // Forgot password controller
     .controller('ForgotPasswordCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
         $scope.$on('$ionicView.enter', function() {
             $ionicSideMenuDelegate.canDragContent(true);
@@ -262,7 +304,8 @@ angular.module('perfect.controllers', [])
         });
 
     })
-
+    
+    // Edit profile controller
     .controller('EditProfileCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
         $scope.$on('$ionicView.enter', function() {
             $ionicSideMenuDelegate.canDragContent(true);
