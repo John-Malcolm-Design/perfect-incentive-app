@@ -1,4 +1,4 @@
-angular.module('perfect.services', [])
+angular.module('perfect.services', ['ngSanitize'])
 
     .service('user', function($q, $http, $state, ENDPOINT_URI) {
 
@@ -78,7 +78,6 @@ angular.module('perfect.services', [])
             $http({
                 method: 'GET',
                 url: ENDPOINT_URI + '/api/carddetail',
-                transformRequest: this.transformRequest,
                 headers: this.getTokenHeaders(),
             }).then(function successCallback(response) {
                 defer.resolve(response);
@@ -91,6 +90,27 @@ angular.module('perfect.services', [])
 
             return defer.promise;
         }
+        
+        this.quickBalanceCheck = function(pan, ccv) {
+            var cardData = {PAN: pan, CCV: ccv};
+            var defer = $q.defer();
+            $http({
+                method: 'POST',
+                headers: {'Content-Type': 'application/json; charset=utf-8'},
+                url: ENDPOINT_URI + '/api/checkcardbalance',
+                data: cardData
+            }).then(function successCallback(response) {
+                defer.resolve(response);
+                // this callback will be called asynchronously
+                // when the response is available
+            }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.  
+            });
+
+            return defer.promise;
+        }
+
 
         this.logOut = function() {
             sessionStorage.removeItem(tokenKey);

@@ -16,6 +16,10 @@ angular.module('perfect.controllers', [])
     })
 
     .controller('HomeCtrl', function($scope, $http, user, $ionicSideMenuDelegate, $ionicPopover) {
+        $scope.card = {};
+        $scope.balance = {};
+        $scope.qBC = 'Quick Balance<br/> Check';
+        
         $scope.$on('$ionicView.enter', function() {
             $ionicSideMenuDelegate.canDragContent(false);
         });
@@ -28,11 +32,29 @@ angular.module('perfect.controllers', [])
         $scope.login = function() {
             user.login($scope.user.email, $scope.user.password);
         };
-
+        
         $scope.hasCardDetails = false;
+        $scope.showingBalance = false;
+        
         $scope.checkQBC = function($event) {
-            if ($scope.hasCardDetails == true) {
+            if (window.localStorage['hascard'] == 1) {
                 console.log('truuu');
+                if($scope.showingBalance == true){
+                    angular.element(document.getElementById('qbc-text')).css({
+                    'font-size': '24px',
+                    'paddingBottom': '10px' 
+                });
+                    $scope.qBC = 'Quick Balance<br/> Check';  
+                    $scope.showingBalance = false;
+                } else{
+                    $scope.balance = window.localStorage['balance'];
+                    angular.element(document.getElementById('qbc-text')).css({
+                    'font-size': '44px',
+                    'paddingBottom': '0px' 
+                });
+                    $scope.showingBalance = true;
+                        $scope.qBC = '€' + $scope.balance; 
+                }
             } else {
                 $scope.openPopover($event);
             }
@@ -71,9 +93,39 @@ angular.module('perfect.controllers', [])
         $scope.$on('popover.removed', function() {
             // Execute action
         });
+        
+        $scope.quickBalanceCheck = function() {
+            
+            
+            angular.element(document.getElementById('qbcList')).css({
+                    'display': 'none'
+                });
+            
+            angular.element(document.getElementById('spinny')).css({
+                    'display': 'block'
+                });
+               
+            
+            // console.log('pan: ' + $scope.card.pan + ', ccv: ' + $scope.card.ccv);
+            user.quickBalanceCheck($scope.card.pan, $scope.card.ccv).then(function(response) {
+                window.localStorage['balance'] = response.data.Balance;
+                window.localStorage['hascard'] = 1;
+                console.log($scope.card);
+                
+                            $scope.closePopover();
+                                $scope.hasCardDetails = true;
+                                $scope.showingBalance = true;
+                $scope.balance = response.data.Balance;
+                console.log(response.data.Balance);
+                $scope.qBC = '€' + $scope.balance;
+                angular.element(document.getElementById('qbc-text')).css({
+                    'font-size': '44px',
+                    'paddingBottom': '0px' 
+                });
+            });
+        }
 
 
-        $scope.baseUrl = 'http://test.perfectpaas.com/';
 
         $scope.testApi = function() {
             user.testApi();
