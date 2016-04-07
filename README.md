@@ -43,18 +43,18 @@ Cross platform app written in Javascript.
 This is a list of the most imporant files in the application.
 
 ### JS
-- js/app.js - Global app decleration and configuration, includes route configuration, onrun() method and global variables. 
-- js/controllers.js - Contains the controller for each of the views in the app.
-- js/services.js - RESTfull user service. Used for client authentication and endpoint communication.
+- www/js/app.js - Global app decleration and configuration, includes route configuration, onrun() method and global variables. 
+- www/js/controllers.js - Contains the controller for each of the views in the app.
+- www/js/services.js - RESTfull user service. Used for client authentication and endpoint communication.
 
 ### HTML & SASS
-- index.html - App template. Code which is global to each view.
-- views/login.html - Inital app login page.
-- views/intro.html - Instructions on how to use app.
-- views/home.html - Home screen for app.
-- views/my-cards.html - Card Management.
-- views/sign-up.html - New user registration.
-- views/edit-profile.html - Edit profile.
+- www/index.html - App template. Code which is global to each view.
+- www/views/login.html - Inital app login page.
+- www/views/intro.html - Instructions on how to use app.
+- www/views/home.html - Home screen for app.
+- www/views/my-cards.html - Card Management.
+- www/views/sign-up.html - New user registration.
+- www/views/edit-profile.html - Edit profile.
 - scss/ionic.app.scss - Stylesheet used for all custom styles.
 
 ## Running Project
