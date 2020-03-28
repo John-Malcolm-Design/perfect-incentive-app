@@ -1,7 +1,4 @@
-![alt text][logo]
-[logo]: http://johnmalcolmdesign.com/perfect_incentive_color.svg "Perfect Incentive Logo"
-
-# Perfect Incentive Cross Platform App
+# Perfect Incentive App
 
 [![Node version](https://img.shields.io/npm/v/npm.svg?style=flat)](http://nodejs.org/download/)
 [![Bower version](https://img.shields.io/bower/v/bootstrap.svg?style=flat)](http://bower.io/#install-bower)
